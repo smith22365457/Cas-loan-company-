@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lendora | Demo Application</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7ff;
+color:#172033;
+}
+
+.demo{
+background:#fff0c2;
+color:#6b4e00;
+text-align:center;
+padding:9px;
+font-size:13px;
+font-weight:bold;
+}
+
+header{
+background:white;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #e5e7eb;
+}
+
+.logo{
+font-size:25px;
+font-weight:bold;
+color:#173b8f;
+}
+
+.logo span{
+display:inline-flex;
+width:40px;
+height:40px;
+border-radius:12px;
+background:linear-gradient(135deg,#173b8f,#7657ff);
+color:white;
+align-items:center;
+justify-content:center;
+margin-right:8px;
+}
+
+.back{
+text-decoration:none;
+color:#173b8f;
+font-weight:bold;
+}
+
+.container{
+max-width:720px;
+margin:50px auto;
+padding:0 20px;
+}
+
+.title{
+text-align:center;
+margin-bottom:30px;
+}
+
+.title h1{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.progress{
+display:flex;
+gap:8px;
+margin-bottom:25px;
+}
+
+.progress div{
+height:6px;
+flex:1;
+background:#dbe2f2;
+border-radius:10px;
+}
+
+.progress .active{
+background:linear-gradient(90deg,#173b8f,#7657ff);
+}
+
+.form-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 12px 35px rgba(20,50,120,.08);
+}
+
+.step{
+display:none;
+}
+
+.step.active{
+display:block;
+}
+
+.step h2{
+margin-bottom:8px;
+}
+
+.step p{
+color:#64748b;
+margin-bottom:25px;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:14px;
+border:1px solid #cbd5e1;
+border-radius:9px;
+font-size:16px;
+}
+
+textarea{
+min-height:100px;
+}
+
+.buttons{
+display:flex;
+justify-content:space-between;
+gap:12px;
+margin-top:25px;
+}
+
+button{
+border:0;
+padding:14px 20px;
+border-radius:9px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.next{
+background:#173b8f;
+color:white;
+}
+
+.previous{
+background:#e8edf7;
+color:#172033;
+}
+
+.submit{
+background:#10a37f;
+color:white;
+width:100%;
+}
+
+.info{
+background:#eef3ff;
+padding:15px;
+border-radius:10px;
+margin-bottom:20px;
+font-size:14px;
+}
+
+.upload{
+border:2px dashed #94a3b8;
+padding:25px;
+border-radius:12px;
+text-align:center;
+background:#f8fafc;
+}
+
+.preview{
+display:none;
+max-width:100%;
+max-height:220px;
+margin:20px auto 0;
+border-radius:10px;
+}
+
+.result{
+display:none;
+text-align:center;
+}
+
+.success{
+background:#ecfdf5;
+border:1px solid #86efac;
+padding:25px;
+border-radius:15px;
+}
+
+@media(max-width:600px){
+.container{margin:35px auto}
+.form-card{padding:22px}
+.title h1{font-size:31px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<span>L</span>Lendora
+</div>
+
+<a class="back" href="index.html">
+← Home
+</a>
+
+</header>
+
+<div class="container">
+
+<div class="title">
+
+<h1>Loan Application</h1>
+
+<p>
+Complete the application step by step.
+</p>
+
+</div>
+
+<div class="progress">
+<div id="bar1" class="active"></div>
+<div id="bar2"></div>
+<div id="bar3"></div>
+<div id="bar4"></div>
+<div id="bar5"></div>
+</div>
+
+<div class="form-card">
+
+<form id="loanForm">
+
+<!-- STEP 1 -->
+
+<div class="step active" id="step1">
+
+<h2>Personal Information</h2>
+
+<p>Tell us about yourself.</p>
+
+<label>Full Names</label>
+<input id="fullname" type="text" required>
+
+<label>Date of Birth</label>
+<input id="dob" type="date" required>
+
+<label>Gender</label>
+<select id="gender">
+<option>Male</option>
+<option>Female</option>
+<option>Prefer not to say</option>
+</select>
+
+<label>Marital Status</label>
+<select id="marital">
+<option>Single</option>
+<option>Married</option>
+<option>Other</option>
+</select>
+
+<div class="buttons">
+<span></span>
+<button type="button" class="next" onclick="nextStep(2)">
+Continue →
+</button>
+</div>
+
+</div>
+
+
+<!-- STEP 2 -->
+
+<div class="step" id="step2">
+
+<h2>Contact Information</h2>
+
+<p>Enter fictional contact details.</p>
+
+<label>Contact / Mailing Address</label>
+<input id="address" type="text" required>
+
+<label>Country</label>
+<input id="country" type="text" required>
+
+<label>State</label>
+<input id="state" type="text" required>
+
+<label>Cell-Phone Number</label>
+<input id="phone" type="tel" required>
+
+<label>Username / Email</label>
+<input id="email" type="text" required>
+
+<div class="buttons">
+
+<button type="button" class="previous" onclick="nextStep(1)">
+← Back
+</button>
+
+<button type="button" class="next" onclick="nextStep(3)">
+Continue →
+</button>
+
+</div>
+
+</div>
+
+
+<!-- STEP 3 -->
+
+<div class="step" id="step3">
+
+<h2>Employment & Income</h2>
+
+<p>Enter employment information.</p>
+
+<label>Occupation</label>
+<input id="occupation" type="text">
+
+<label>Monthly Income</label>
+<input id="income" type="number">
+
+<div class="buttons">
+
+<button type="button" class="previous" onclick="nextStep(2)">
+← Back
+</button>
+
+<button type="button" class="next" onclick="nextStep(4)">
+Continue →
+</button>
+
+</div>
+
+</div>
+
+
+<!-- STEP 4 -->
+
+<div class="step" id="step4">
+
+<h2>Loan Details</h2>
+
+<label>Amount Needed as Loan</label>
+
+<input
+id="amount"
+type="number"
+placeholder="Example: 5000"
+required
+>
+
+<label>Loan Duration</label>
+
+<select id="duration">
+
+<option value="1">1 month</option>
+<option value="3">3 months</option>
+<option value="6">6 months</option>
+<option value="12">12 months</option>
+<option value="18">18 months</option>
+<option value="24">24 months</option>
+<option value="36">36 months</option>
+<option value="48">48 months</option>
+
+</select>
+
+<label>Purpose of Loan</label>
+
+<textarea
+id="purpose"
+placeholder="Example: business expansion"
+></textarea>
+
+<div class="info">
+
+<strong> interest rate: 4%</strong>
+
+</div>
+
+<div class="buttons">
+
+<button type="button" class="previous" onclick="nextStep(3)">
+← Back
+</button>
+
+<button type="button" class="next" onclick="nextStep(5)">
+Continue →
+</button>
+
+</div>
+
+</div>
+
+
+<!-- STEP 5 -->
+
+<div class="step" id="step5">
+
+<h2>Identity Verification</h2>
+
+<p>upload identity.</p>
+
+<div class="info">
+
+</div>
+
+<div class="upload">
+
+<label for="idcard">
+Select ID Image
+</label>
+
+<input
+id="idcard"
+type="file"
+accept="image/*"
+onchange="previewID(event)"
+>
+
+<img id="preview" class="preview">
+
+</div>
+
+<div class="buttons">
+
+<button type="button" class="previous" onclick="nextStep(4)">
+← Back
+</button>
+
+<button type="submit" class="submit">
+Submit Application
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+
+<div id="result" class="result">
+
+<div class="success">
+
+<h2>Application Received</h2>
+
+<p style="margin:15px 0">
+
+Your application has been created.
+
+</p>
+
+<strong>
+DEMO STATUS: PENDING
+</strong>
+
+<br><br>
+
+<a
+href="dashboard.html"
+style="color:#173b8f;font-weight:bold;"
+>
+View Dashboard →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+let currentStep = 1;
+
+function nextStep(step){
+
+document
+.querySelectorAll(".step")
+.forEach(s => s.classList.remove("active"));
+
+document
+.getElementById("step" + step)
+.classList.add("active");
+
+for(let i=1;i<=5;i++){
+
+document
+.getElementById("bar"+i)
+.classList.toggle("active",i<=step);
+
+}
+
+currentStep = step;
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+function previewID(event){
+
+const file = event.target.files[0];
+
+const preview =
+document.getElementById("preview");
+
+if(!file){
+
+preview.style.display="none";
+
+return;
+}
+
+const reader = new FileReader();
+
+reader.onload=function(e){
+
+preview.src=e.target.result;
+
+preview.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+
+document
+.getElementById("loanForm")
+.addEventListener("submit",function(event){
+
+event.preventDefault();
+
+this.style.display="none";
+
+document
+.getElementById("result")
+.style.display="block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+});
+
+</script>
+
+</body>
+</html>
