@@ -3,225 +3,279 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇵🇭🇺🇸CASH LOAN FINANCIA COMPANY🇺🇸🇵🇭| LOAN Application</title>
+
+<title>🇵🇭🇺🇸CASH LOAN FINANCIAL🇺🇸🇵🇭|  Application</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-font-family:Arial,sans-serif;
-background:#f5f7ff;
-color:#172033;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#eef4ff,#f8f5ff);
+    color:#172033;
+}
 
-background:#fff0c2;
-color:#6b4e00;
-text-align:center;
-padding:9px;
-font-size:13px;
-font-weight:bold;
+.demo{
+    background:#fff0c2;
+    color:#6b4e00;
+    text-align:center;
+    padding:9px;
+    font-size:13px;
+    font-weight:bold;
 }
 
 header{
-background:white;
-padding:18px 7%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid #e5e7eb;
+    background:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #e5e7eb;
 }
 
 .logo{
-font-size:25px;
-font-weight:bold;
-color:#173b8f;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:23px;
+    font-weight:bold;
+    color:#173b8f;
 }
 
-.logo span{
-display:inline-flex;
-width:40px;
-height:40px;
-border-radius:12px;
-background:linear-gradient(135deg,#173b8f,#7657ff);
-color:white;
-align-items:center;
-justify-content:center;
-margin-right:8px;
+.logo-mark{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#173b8f,#7657ff);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.back{
-text-decoration:none;
-color:#173b8f;
-font-weight:bold;
+.home{
+    text-decoration:none;
+    color:#173b8f;
+    font-weight:bold;
 }
 
 .container{
-max-width:720px;
-margin:50px auto;
-padding:0 20px;
+    max-width:800px;
+    margin:40px auto;
+    padding:0 20px;
 }
 
 .title{
-text-align:center;
-margin-bottom:30px;
+    text-align:center;
+    margin-bottom:30px;
 }
 
 .title h1{
-font-size:38px;
-margin-bottom:10px;
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.title p{
+    color:#64748b;
 }
 
 .progress{
-display:flex;
-gap:8px;
-margin-bottom:25px;
+    display:flex;
+    gap:8px;
+    margin-bottom:25px;
 }
 
 .progress div{
-height:6px;
-flex:1;
-background:#dbe2f2;
-border-radius:10px;
+    height:5px;
+    flex:1;
+    background:#dbe3f3;
+    border-radius:10px;
 }
 
 .progress .active{
-background:linear-gradient(90deg,#173b8f,#7657ff);
+    background:#4f46e5;
 }
 
 .form-card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 12px 35px rgba(20,50,120,.08);
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 15px 45px rgba(30,50,100,.08);
 }
 
 .step{
-display:none;
+    display:none;
 }
 
 .step.active{
-display:block;
+    display:block;
 }
 
 .step h2{
-margin-bottom:8px;
+    margin-bottom:8px;
+    color:#173b8f;
 }
 
-.step p{
-color:#64748b;
-margin-bottom:25px;
+.step-description{
+    color:#64748b;
+    margin-bottom:25px;
+}
+
+.field{
+    margin-bottom:18px;
 }
 
 label{
-display:block;
-font-weight:bold;
-margin:16px 0 7px;
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
 }
 
 input,
 select,
 textarea{
-width:100%;
-padding:14px;
-border:1px solid #cbd5e1;
-border-radius:9px;
-font-size:16px;
+    width:100%;
+    padding:13px;
+    border:1px solid #d7dfed;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
 }
 
 textarea{
-min-height:100px;
+    min-height:100px;
+    resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#4f46e5;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
 }
 
 .buttons{
-display:flex;
-justify-content:space-between;
-gap:12px;
-margin-top:25px;
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:25px;
 }
 
 button{
-border:0;
-padding:14px 20px;
-border-radius:9px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
+    border:none;
+    padding:13px 20px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px;
 }
 
 .next{
-background:#173b8f;
-color:white;
+    background:linear-gradient(135deg,#173b8f,#7657ff);
+    color:white;
+    margin-left:auto;
 }
 
-.previous{
-background:#e8edf7;
-color:#172033;
+.back{
+    background:#e8edf7;
+    color:#172033;
 }
 
 .submit{
-background:#10a37f;
-color:white;
-width:100%;
+    background:#16a34a;
+    color:white;
+    margin-left:auto;
 }
 
-.info{
-background:#eef3ff;
-padding:15px;
-border-radius:10px;
-margin-bottom:20px;
-font-size:14px;
-}
-
-.upload{
-border:2px dashed #94a3b8;
-padding:25px;
-border-radius:12px;
-text-align:center;
-background:#f8fafc;
-}
-
-.preview{
-display:none;
-max-width:100%;
-max-height:220px;
-margin:20px auto 0;
-border-radius:10px;
-}
-
-.result{
-display:none;
-text-align:center;
+rate{
+    background:#eef3ff;
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+    color:#334155;
 }
 
 .success{
-background:#ecfdf5;
-border:1px solid #86efac;
-padding:25px;
-border-radius:15px;
+    display:none;
+    text-align:center;
+    padding:20px 0;
 }
 
-@media(max-width:600px){
-.container{margin:35px auto}
-.form-card{padding:22px}
-.title h1{font-size:31px}
+.success-icon{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#dcfce7;
+    color:#15803d;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin:0 auto 20px;
+}
+
+.login-info{
+    background:#eef3ff;
+    padding:18px;
+    border-radius:12px;
+    text-align:left;
+    margin:25px 0;
+}
+
+.dashboard-button{
+    display:inline-block;
+    padding:14px 22px;
+    border-radius:10px;
+    background:#173b8f;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+@media(max-width:650px){
+
+    header{
+        padding:15px 20px;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .form-card{
+        padding:22px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+</div>
+
+
 <header>
 
 <div class="logo">
-<span>L</span>🇵🇭CASH LOAN FINANCIA COMPANY🇺🇸
+    <div class="logo-mark">C</div>
+    CASH LOAN
 </div>
 
-<a class="back" href="index.html">
-← Home
+<a href="index.html" class="home">
+    ← Home
 </a>
 
 </header>
+
 
 <div class="container">
 
@@ -230,56 +284,105 @@ border-radius:15px;
 <h1>Loan Application</h1>
 
 <p>
-Complete the application step by step.
+Complete the demonstration application below.
 </p>
 
 </div>
 
+
 <div class="progress">
-<div id="bar1" class="active"></div>
-<div id="bar2"></div>
-<div id="bar3"></div>
-<div id="bar4"></div>
-<div id="bar5"></div>
+    <div class="progress-bar active"></div>
+    <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
 </div>
+
 
 <div class="form-card">
 
 <form id="loanForm">
 
+
 <!-- STEP 1 -->
 
-<div class="step active" id="step1">
+<div class="step active">
 
 <h2>Personal Information</h2>
 
-<p>Tell us about yourself.</p>
+<p class="step-description">
+Tell us about yourself.
+</p>
+
+<div class="field">
 
 <label>Full Names</label>
-<input id="fullname" type="text" required>
+
+<input
+type="text"
+id="fullName"
+required
+placeholder="Enter your full name">
+
+</div>
+
+
+<div class="row">
+
+<div class="field">
 
 <label>Date of Birth</label>
-<input id="dob" type="date" required>
+
+<input
+type="date"
+id="dob"
+required>
+
+</div>
+
+
+<div class="field">
 
 <label>Gender</label>
-<select id="gender">
+
+<select id="gender" required>
+
+<option value="">Select gender</option>
 <option>Male</option>
 <option>Female</option>
-<option>Prefer not to say</option>
+<option>Other</option>
+
 </select>
+
+</div>
+
+</div>
+
+
+<div class="field">
 
 <label>Marital Status</label>
-<select id="marital">
+
+<select id="maritalStatus" required>
+
+<option value="">Select status</option>
 <option>Single</option>
 <option>Married</option>
-<option>Other</option>
+<option>Divorced</option>
+<option>Widowed</option>
+
 </select>
 
+</div>
+
+
 <div class="buttons">
-<span></span>
-<button type="button" class="next" onclick="nextStep(2)">
-Continue →
+
+<button type="button" class="next" onclick="nextStep()">
+Next
 </button>
+
 </div>
 
 </div>
@@ -287,35 +390,78 @@ Continue →
 
 <!-- STEP 2 -->
 
-<div class="step" id="step2">
+<div class="step">
 
 <h2>Contact Information</h2>
 
-<p>Enter fictional contact details.</p>
+<p class="step-description">
+Enter your contact details.
+</p>
+
+
+<div class="field">
 
 <label>Contact / Mailing Address</label>
-<input id="address" type="text" required>
+
+<textarea
+id="address"
+required
+placeholder="Enter your address"></textarea>
+
+</div>
+
+
+<div class="row">
+
+<div class="field">
 
 <label>Country</label>
-<input id="country" type="text" required>
+
+<input
+type="text"
+id="country"
+required
+placeholder="E.g Philippines ">
+
+</div>
+
+
+<div class="field">
 
 <label>State</label>
-<input id="state" type="text" required>
+
+<input
+type="text"
+id="state"
+required
+placeholder="Enter your state">
+
+</div>
+
+</div>
+
+
+<div class="field">
 
 <label>Cell-Phone Number</label>
-<input id="phone" type="tel" required>
 
-<label>Username / Email</label>
-<input id="email" type="text" required>
+<input
+type="tel"
+id="phone"
+required
+placeholder="Enter phone number">
+
+</div>
+
 
 <div class="buttons">
 
-<button type="button" class="previous" onclick="nextStep(1)">
-← Back
+<button type="button" class="back" onclick="prevStep()">
+Back
 </button>
 
-<button type="button" class="next" onclick="nextStep(3)">
-Continue →
+<button type="button" class="next" onclick="nextStep()">
+Next
 </button>
 
 </div>
@@ -325,26 +471,49 @@ Continue →
 
 <!-- STEP 3 -->
 
-<div class="step" id="step3">
+<div class="step">
 
-<h2>Employment & Income</h2>
+<h2>Employment Information</h2>
 
-<p>Enter employment information.</p>
+<p class="step-description">
+Tell us about your occupation.
+</p>
+
+
+<div class="field">
 
 <label>Occupation</label>
-<input id="occupation" type="text">
+
+<input
+type="text"
+id="occupation"
+required
+placeholder="Enter occupation">
+
+</div>
+
+
+<div class="field">
 
 <label>Monthly Income</label>
-<input id="income" type="number">
+
+<input
+type="number"
+id="income"
+required
+placeholder="Enter monthly income">
+
+</div>
+
 
 <div class="buttons">
 
-<button type="button" class="previous" onclick="nextStep(2)">
-← Back
+<button type="button" class="back" onclick="prevStep()">
+Back
 </button>
 
-<button type="button" class="next" onclick="nextStep(4)">
-Continue →
+<button type="button" class="next" onclick="nextStep()">
+Next
 </button>
 
 </div>
@@ -354,22 +523,72 @@ Continue →
 
 <!-- STEP 4 -->
 
-<div class="step" id="step4">
+<div class="step">
 
 <h2>Loan Details</h2>
 
-<label>Amount Needed as Loan</label>
+<p class="step-description">
+Choose your currency, amount and repayment period.
+</p>
+
+
+<div class="field">
+
+<label>Currency</label>
+
+<select id="currency" required>
+
+<option value="">Select currency</option>
+
+<option value="</option>
+<option value="USD">USD — US Dollar ($)</option>
+<option value="EUR">EUR — Euro (€)</option>
+<option value="GBP">GBP — British Pound (£)</option>
+<option value="CAD">CAD — Canadian Dollar (C$)</option>
+<option value="AUD">AUD — Australian Dollar (A$)</option>
+<option value="CHF">CHF — Swiss Franc</option>
+<option value="JPY">JPY — Japanese Yen (¥)</option>
+<option value="CNY">CNY — Chinese Yuan (¥)</option>
+<option value="INR">INR — Indian Rupee (₹)</option>
+<option value="ZAR">ZAR — South African Rand (R)</option>
+<option value="PESO">PHP — Philippine peso</option>
+<option value="GHS">GHS — Ghanaian Cedi</option>
+<option value="AED">AED — UAE Dirham</option>
+<option value="SAR">SAR — Saudi Riyal</option>
+<option value="BRL">BRL — Brazilian Real</option>
+<option value="MXN">MXN — Mexican Peso</option>
+<option value="SGD">SGD — Singapore Dollar</option>
+<option value="NZD">NZD — New Zealand Dollar</option>
+<option value="SEK">SEK — Swedish Krona</option>
+<option value="NOK">NOK — Norwegian Krone</option>
+<option value="DKK">DKK — Danish Krone</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Amount Needed</label>
 
 <input
-id="amount"
 type="number"
-placeholder="Example: 5000"
+id="amount"
 required
->
+min="1"
+placeholder="Enter loan amount">
+
+</div>
+
+
+<div class="field">
 
 <label>Loan Duration</label>
 
-<select id="duration">
+<select id="duration" required>
+
+<option value="">Select duration</option>
 
 <option value="1">1 month</option>
 <option value="3">3 months</option>
@@ -382,27 +601,36 @@ required
 
 </select>
 
+</div>
+
+
+<div class="field">
+
 <label>Purpose of Loan</label>
 
 <textarea
 id="purpose"
-
-></textarea>
-
-<div class="info">
-
-<strong> interest rate: 4%</strong>
+required
+placeholder="State the purpose of the loan"></textarea>
 
 </div>
 
+
+<div class="rate">
+
+<
+
+</div>
+
+
 <div class="buttons">
 
-<button type="button" class="previous" onclick="nextStep(3)">
-← Back
+<button type="button" class="back" onclick="prevStep()">
+Back
 </button>
 
-<button type="button" class="next" onclick="nextStep(5)">
-Continue →
+<button type="button" class="next" onclick="nextStep()">
+Next
 </button>
 
 </div>
@@ -412,41 +640,105 @@ Continue →
 
 <!-- STEP 5 -->
 
-<div class="step" id="step5">
+<div class="step">
 
-<h2>Identity Verification</h2>
+<h2>Create Your Loan Account</h2>
 
-<p>upload identity.</p>
+<p class="step-description">
+Create login details for your loan application dashboard.
+</p>
 
-<div class="info">
 
-</div>
+<div class="field">
 
-<div class="upload">
-
-<label for="idcard">
-Select ID Image
-</label>
+<label>Username</label>
 
 <input
-id="idcard"
-type="file"
-accept="image/*"
-onchange="previewID(event)"
->
-
-<img id="preview" class="preview">
+type="text"
+id="username"
+required
+placeholder="Create a username">
 
 </div>
+
+
+<div class="field">
+
+<label>Password</label>
+
+<input
+type="password"
+id="userPassword"
+required
+minlength="6"
+placeholder="Create a password">
+
+</div>
+
+
+<div class="rate">
+
+</div>
+
 
 <div class="buttons">
 
-<button type="button" class="previous" onclick="nextStep(4)">
-← Back
+<button type="button" class="back" onclick="prevStep()">
+Back
+</button>
+
+<button type="button" class="next" onclick="nextStep()">
+Next
+</button>
+
+</div>
+
+</div>
+
+
+<!-- STEP 6 -->
+
+<div class="step">
+
+<h2>Identity Verification</h2>
+
+<p class="step-description">
+Upload an image for the loan verification.
+</p>
+
+
+<div class="field">
+
+<label>ID Card Image</label>
+
+<input
+type="file"
+id="idImage"
+accept="image/*">
+
+</div>
+
+
+<div id="imagePreview"></div>
+
+
+
+
+<br>
+
+For this Application, the selected image stays in the Admin.
+
+</div>
+
+
+<div class="buttons">
+
+<button type="button" class="back" onclick="prevStep()">
+Back
 </button>
 
 <button type="submit" class="submit">
-Submit Application
+Submit Demo Application
 </button>
 
 </div>
@@ -456,32 +748,37 @@ Submit Application
 </form>
 
 
-<div id="result" class="result">
+<!-- SUCCESS -->
 
-<div class="success">
+<div id="success" class="success">
 
-<h2>Application Received</h2>
+<div class="success-icon">
+✓
+</div>
 
-<p style="margin:15px 0">
+<h2>Application Submitted</h2>
 
-Your application has been created.
-
+<p style="margin-top:10px;color:#64748b;">
+Your fictional demonstration application has been created.
 </p>
 
-<strong>
-LOAN STATUS: PENDING
-</strong>
 
-<br><br>
+<div class="login-info">
 
-<a
-href="dashboard.html"
-style="color:#173b8f;font-weight:bold;"
->
-View Dashboard →
-</a>
+<strong>Demo Username:</strong>
+
+<p id="displayUsername" style="margin:6px 0 15px;"></p>
+
+<strong>Application Reference:</strong>
+
+<p id="displayReference" style="margin-top:6px;"></p>
 
 </div>
+
+
+<a href="dashboard.html" class="dashboard-button">
+Open My Dashboard
+</a>
 
 </div>
 
@@ -492,81 +789,253 @@ View Dashboard →
 
 <script>
 
-let currentStep = 1;
+let currentStep = 0;
 
-function nextStep(step){
+const steps = document.querySelectorAll(".step");
 
-document
-.querySelectorAll(".step")
-.forEach(s => s.classList.remove("active"));
+const progressBars =
+document.querySelectorAll(".progress-bar");
 
-document
-.getElementById("step" + step)
-.classList.add("active");
 
-for(let i=1;i<=5;i++){
+function showStep(){
 
-document
-.getElementById("bar"+i)
-.classList.toggle("active",i<=step);
+    steps.forEach((step,index)=>{
+
+        step.classList.toggle(
+            "active",
+            index === currentStep
+        );
+
+    });
+
+    progressBars.forEach((bar,index)=>{
+
+        bar.classList.toggle(
+            "active",
+            index <= currentStep
+        );
+
+    });
 
 }
 
-currentStep = step;
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
+function validateCurrentStep(){
+
+    const fields =
+        steps[currentStep].querySelectorAll(
+            "input, select, textarea"
+        );
+
+    for(const field of fields){
+
+        if(!field.checkValidity()){
+
+            field.reportValidity();
+
+            return false;
+
+        }
+
+    }
+
+    return true;
+
+}
+
+
+function nextStep(){
+
+    if(!validateCurrentStep()) return;
+
+    if(currentStep < steps.length - 1){
+
+        currentStep++;
+
+        showStep();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+
+}
+
+
+function prevStep(){
+
+    if(currentStep > 0){
+
+        currentStep--;
+
+        showStep();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+
+}
+
+
+/* ID IMAGE PREVIEW */
+
+document.getElementById("idImage")
+.addEventListener("change",function(){
+
+    const file = this.files[0];
+
+    if(!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+        document.getElementById("imagePreview").innerHTML = `
+
+            <img
+            src="${e.target.result}"
+            style="
+            width:100%;
+            max-height:250px;
+            object-fit:contain;
+            margin:15px 0;
+            border-radius:10px;
+            border:1px solid #dbe3f3;
+            "
+            >
+
+        `;
+
+        /* Store only for this browser */
+
+        localStorage.setItem(
+            "Image",
+            e.target.result
+        );
+
+    };
+
+    reader.readAsDataURL(file);
+
 });
 
-}
 
+/* SUBMIT APPLICATION */
 
-function previewID(event){
-
-const file = event.target.files[0];
-
-const preview =
-document.getElementById("preview");
-
-if(!file){
-
-preview.style.display="none";
-
-return;
-}
-
-const reader = new FileReader();
-
-reader.onload=function(e){
-
-preview.src=e.target.result;
-
-preview.style.display="block";
-
-};
-
-reader.readAsDataURL(file);
-
-}
-
-
-document
-.getElementById("loanForm")
+document.getElementById("loanForm")
 .addEventListener("submit",function(event){
 
-event.preventDefault();
+    event.preventDefault();
 
-this.style.display="none";
+    if(!validateCurrentStep()) return;
 
-document
-.getElementById("result")
-.style.display="block";
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+   
+        Date.now().toString().slice(-8);
+
+
+    const application = {
+
+        reference: reference,
+
+        fullName:
+            document.getElementById("fullName").value,
+
+        dob:
+            document.getElementById("dob").value,
+
+        gender:
+            document.getElementById("gender").value,
+
+        maritalStatus:
+            document.getElementById("maritalStatus").value,
+
+        address:
+            document.getElementById("address").value,
+
+        country:
+            document.getElementById("country").value,
+
+        state:
+            document.getElementById("state").value,
+
+        phone:
+            document.getElementById("phone").value,
+
+        occupation:
+            document.getElementById("occupation").value,
+
+        income:
+            document.getElementById("income").value,
+
+        currency:
+            document.getElementById("currency").value,
+
+        amount:
+            Number(document.getElementById("amount").value),
+
+        duration:
+            Number(document.getElementById("duration").value),
+
+        purpose:
+            document.getElementById("purpose").value,
+
+        username:
+            document.getElementById("username").value,
+
+        password:
+            document.getElementById("userPassword").value,
+
+        status:
+            "PENDING",
+
+        registrationFee:
+            0,
+
+        createdAt:
+            new Date().toISOString()
+
+    };
+
+
+    /*
+    Save the loan application
+    in this browser only.
+    */
+
+    localStorage.setItem(
+        "lendoraApplication",
+        JSON.stringify(application)
+    );
+
+
+    document.getElementById("loanForm").style.display =
+        "none";
+
+    document.querySelector(".progress").style.display =
+        "none";
+
+
+    document.getElementById("displayUsername")
+        .textContent = application.username;
+
+    document.getElementById("displayReference")
+        .textContent = application.reference;
+
+
+    document.getElementById("success").style.display =
+        "block";
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 });
 
