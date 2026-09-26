@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>cash loan company| Admin</title>
+<title>CASH LOAN | Demo Admin</title>
 
 <style>
 *{
@@ -15,7 +15,6 @@
 
 body{
     font-family:Arial,sans-serif;
-    min-height:100vh;
     background:linear-gradient(135deg,#eef4ff,#f8f5ff);
     color:#172033;
 }
@@ -32,7 +31,7 @@ body{
 .login-box{
     width:90%;
     max-width:420px;
-    margin:90px auto;
+    margin:80px auto;
     background:white;
     padding:35px;
     border-radius:22px;
@@ -86,21 +85,20 @@ input{
     outline:none;
 }
 
-input:focus{
-    border-color:#4f46e5;
-}
-
 button{
-    width:100%;
-    margin-top:15px;
-    padding:14px;
     border:none;
     border-radius:10px;
+    padding:12px 18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.login-button{
+    width:100%;
+    margin-top:15px;
     background:linear-gradient(135deg,#173b8f,#7657ff);
     color:white;
     font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
 }
 
 .error{
@@ -110,7 +108,7 @@ button{
     display:none;
 }
 
-.admin{
+#adminPanel{
     display:none;
 }
 
@@ -130,13 +128,8 @@ header{
 }
 
 .logout{
-    border:none;
     background:#fee2e2;
     color:#b91c1c;
-    padding:10px 16px;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
 }
 
 .container{
@@ -158,22 +151,21 @@ header{
     color:#64748b;
 }
 
-.grid{
+.stats{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
     margin-bottom:25px;
 }
 
-.card{
+.stat{
     background:white;
     padding:25px;
     border-radius:18px;
     border:1px solid #e5e7eb;
-    box-shadow:0 8px 25px rgba(30,50,100,.06);
 }
 
-.card h3{
+.stat h3{
     color:#173b8f;
     margin-bottom:10px;
 }
@@ -184,56 +176,105 @@ header{
 }
 
 .application{
-    margin-top:20px;
+    background:white;
+    padding:28px;
+    border-radius:20px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 8px 25px rgba(30,50,100,.06);
 }
 
-.application-row{
-    padding:18px 0;
-    border-bottom:1px solid #e5e7eb;
-}
-
-.application-row:last-child{
-    border-bottom:none;
+.application-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
 }
 
 .status{
-    display:inline-block;
-    margin-top:8px;
-    padding:6px 12px;
-    border-radius:20px;
+    padding:8px 15px;
+    border-radius:30px;
     background:#fef3c7;
     color:#92400e;
-    font-size:13px;
     font-weight:bold;
 }
 
+.status.approved{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.details{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.detail{
+    background:#f8fafc;
+    padding:15px;
+    border-radius:10px;
+}
+
+.detail strong{
+    display:block;
+    color:#64748b;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.action{
+    margin-top:25px;
+    padding-top:25px;
+    border-top:1px solid #e5e7eb;
+}
+
 .approve{
-    width:auto;
-    margin-top:12px;
-    padding:10px 15px;
     background:#16a34a;
+    color:white;
+}
+
+.approved-message{
+    display:none;
+    background:#dcfce7;
+    color:#166534;
+    padding:15px;
+    border-radius:10px;
+}
+
+.no-application{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    color:#64748b;
 }
 
 .demo-note{
+    margin-top:25px;
     background:#eef3ff;
     padding:18px;
     border-radius:12px;
-    margin-top:25px;
     color:#334155;
 }
 
 @media(max-width:700px){
 
     header{
-        padding:16px 20px;
+        padding:15px 20px;
     }
 
-    .grid{
+    .stats{
         grid-template-columns:1fr;
     }
 
-    .login-box{
-        margin:60px auto;
+    .details{
+        grid-template-columns:1fr;
+    }
+
+    .application-header{
+        flex-direction:column;
+        align-items:flex-start;
     }
 }
 </style>
@@ -241,161 +282,164 @@ header{
 
 <body>
 
-<div class="L">
-DEMO — Fictional Lendora administration interface.
+<div class="demo">
+DEMO — Fictional administrator interface. No real financial service is provided.
 </div>
 
 
-<!-- LOGIN -->
+<!-- ADMIN LOGIN -->
 
 <div id="loginScreen">
 
-    <div class="login-box">
+<div class="login-box">
 
-        <div class="logo">
+<div class="logo">
 
-            <div class="logo-mark">L</div>
+<div class="logo-mark">
+C
+</div>
 
-            <div class="logo-name">
-                Lendora
-            </div>
+<div class="logo-name">
+CASH LOAN
+</div>
 
-        </div>
+</div>
 
-        <h1>Admin Login</h1>
+<h1>
+Admin Login
+</h1>
 
-        <p class="subtitle">
-            Private demonstration administrator access.
-        </p>
+<p class="subtitle">
+Private demonstration administrator access.
+</p>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter admin password"
-        >
+<input
+type="password"
+id="adminPassword"
+placeholder="Enter admin password">
 
-        <button onclick="login()">
-            Login
-        </button>
+<button
+class="login-button"
+onclick="login()">
 
-        <p id="error" class="error">
-            Incorrect password.
-        </p>
+Login
 
-    </div>
+</button>
+
+<p
+id="loginError"
+class="error">
+
+Incorrect password.
+
+</p>
+
+</div>
 
 </div>
 
 
-<!-- ADMIN DASHBOARD -->
+<!-- ADMIN PANEL -->
 
-<div id="adminPanel" class="admin">
+<div id="adminPanel">
 
 <header>
 
-    <div class="header-logo">
-        CASH LOAN Admin
-    </div>
+<div class="header-logo">
+CASH LOAN Admin
+</div>
 
-    <button class="logout" onclick="logout()">
-        Logout
-    </button>
+<button
+class="logout"
+onclick="logout()">
+
+Logout
+
+</button>
 
 </header>
 
 
 <div class="container">
 
-    <div class="welcome">
+<div class="welcome">
 
-        <h1>Admin Dashboard</h1>
+<h1>
+Admin Dashboard
+</h1>
 
-        <p>
-            Manage your CASH LOAN COMPANY.
-        </p>
+<p>
+Review the LOAN application FORM
+ website.
+</p>
 
-    </div>
-
-
-    <div class="grid">
-
-        <div class="card">
-
-            <h3>Applications</h3>
-
-            <div class="number">
-                1
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="card">
+<div class="stats">
 
-            <h3>Pending</h3>
+<div class="stat">
 
-            <div class="number">
-                1
-            </div>
+<h3>
+Applications
+</h3>
 
-        </div>
+<div
+class="number"
+id="totalApplications">
 
+0
 
-        <div class="card">
+</div>
 
-            <h3>Approved</h3>
-
-            <div class="number">
-                0
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <div class="card application">
+<div class="stat">
 
-        <h2>Applications</h2>
+<h3>
+Pending
+</h3>
 
-        <div class="application-row">
+<div
+class="number"
+id="pendingApplications">
 
-            <strong>
-                LOAN Applicant
-            </strong>
+0
 
-            <p style="margin-top:7px;">
-                Reference: LD-DEMO-2026-001
-            </p>
+</div>
 
-            <p style="margin-top:5px;">
-                Requested Amount: $5,000
-            </p>
-
-            <p style="margin-top:5px;">
-                Duration: 24 months
-            </p>
-
-            <span class="status">
-                PENDING
-            </span>
-
-            <br>
-
-            <button class="approve" onclick="approveApplication()">
-                Approve LOAN Application
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <div class="LOAN-note">
+<div class="stat">
 
-        <
+<h3>
+Approved
+</h3>
 
-    </div>
+<div
+class="number"
+id="approvedApplications">
+
+0
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="applicationArea">
+</div>
+
+
+<div class="-note">
+
+</p>
+
+</div>
 
 </div>
 
@@ -405,53 +449,466 @@ DEMO — Fictional Lendora administration interface.
 <script>
 
 /*
-ADMIN PASSWORD
+IMPORTANT:
 
-Change the text inside the quotation marks below
-to whatever password you want.
+Use the same password you chose previously.
+
+Change this value if you changed your admin password.
 */
 
-const ADMIN_PASSWORD = "CASHLOANCOMPANY";
+const ADMIN_PASSWORD = "CASHLOAN";
 
 
 function login(){
 
-    const enteredPassword =
-        document.getElementById("password").value;
+    const password =
+        document.getElementById(
+            "adminPassword"
+        ).value;
 
-    if(enteredPassword === ADMIN_PASSWORD){
 
-        document.getElementById("loginScreen").style.display = "none";
+    if(password === ADMIN_PASSWORD){
 
-        document.getElementById("adminPanel").style.display = "block";
+        sessionStorage.setItem(
+            "demoAdminLoggedIn",
+            "true"
+        );
+
+        document.getElementById(
+            "loginScreen"
+        ).style.display = "none";
+
+        document.getElementById(
+            "adminPanel"
+        ).style.display = "block";
+
+        loadAdmin();
 
     }else{
 
-        document.getElementById("error").style.display = "block";
+        document.getElementById(
+            "loginError"
+        ).style.display = "block";
 
     }
 
 }
 
 
-function logout(){
+/* LOAD ADMIN DATA */
 
-    document.getElementById("adminPanel").style.display = "none";
+function loadAdmin(){
 
-    document.getElementById("loginScreen").style.display = "block";
+    const saved =
+        localStorage.getItem(
+            "lendoraApplication"
+        );
 
-    document.getElementById("password").value = "";
+
+    if(!saved){
+
+        document.getElementById(
+            "totalApplications"
+        ).textContent = "0";
+
+        document.getElementById(
+            "pendingApplications"
+        ).textContent = "0";
+
+        document.getElementById(
+            "approvedApplications"
+        ).textContent = "0";
+
+
+        document.getElementById(
+            "applicationArea"
+        ).innerHTML = `
+
+            <div class="no-application">
+
+                <h2>No Demo Applications Yet</h2>
+
+                <p style="margin-top:8px;">
+
+                Submit an application through
+                the demo Apply page first.
+
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const application =
+        JSON.parse(saved);
+
+
+    const status =
+        application.status || "PENDING";
+
+
+    document.getElementById(
+        "totalApplications"
+    ).textContent = "1";
+
+
+    document.getElementById(
+        "pendingApplications"
+    ).textContent =
+        status === "PENDING" ? "1" : "0";
+
+
+    document.getElementById(
+        "approvedApplications"
+    ).textContent =
+        status === "APPROVED" ? "1" : "0";
+
+
+    const statusClass =
+        status === "APPROVED"
+        ? "status approved"
+        : "status";
+
+
+    let actionHTML = "";
+
+
+    if(status === "PENDING"){
+
+        actionHTML = `
+
+            <div class="action">
+
+                <button
+                class="approve"
+                onclick="approveApplication()">
+
+                Approve Demo Application
+
+                </button>
+
+            </div>
+
+        `;
+
+    }else{
+
+        actionHTML = `
+
+            <div class="action">
+
+                <div class="approved-message"
+                style="display:block;">
+
+                ✓ Demo application approved.
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    document.getElementById(
+        "applicationArea"
+    ).innerHTML = `
+
+        <div class="application">
+
+            <div class="application-header">
+
+                <div>
+
+                    <h2>
+                    ${escapeHTML(application.fullName)}
+                    </h2>
+
+                    <p
+                    style="margin-top:6px;color:#64748b;">
+
+                    Reference:
+                    ${escapeHTML(application.reference)}
+
+                    </p>
+
+                </div>
+
+
+                <div class="${statusClass}">
+
+                ${status}
+
+                </div>
+
+            </div>
+
+
+            <div class="details">
+
+
+                <div class="detail">
+
+                    <strong>Username</strong>
+
+                    ${escapeHTML(application.username)}
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>Phone</strong>
+
+                    ${escapeHTML(application.phone)}
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>Country</strong>
+
+                    ${escapeHTML(application.country)}
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>State</strong>
+
+                    ${escapeHTML(application.state)}
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>Occupation</strong>
+
+                    ${escapeHTML(application.occupation)}
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>Monthly Income</strong>
+
+                    ${escapeHTML(String(application.income))}
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>Currency</strong>
+
+                    ${escapeHTML(application.currency)}
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>Requested Amount</strong>
+
+                    ${formatMoney(
+                        application.amount,
+                        application.currency
+                    )}
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>Loan Duration</strong>
+
+                    ${application.duration} months
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>Marital Status</strong>
+
+                    ${escapeHTML(application.maritalStatus)}
+
+                </div>
+
+
+                <div class="detail"
+                style="grid-column:1/-1;">
+
+                    <strong>Loan Purpose</strong>
+
+                    ${escapeHTML(application.purpose)}
+
+                </div>
+
+
+                <div class="detail"
+                style="grid-column:1/-1;">
+
+                    <strong>Address</strong>
+
+                    ${escapeHTML(application.address)}
+
+                </div>
+
+            </div>
+
+
+            ${actionHTML}
+
+        </div>
+
+    `;
 
 }
 
+
+/* APPROVE APPLICATION */
 
 function approveApplication(){
 
-    alert("Loan application approved.");
+    const saved =
+        localStorage.getItem(
+            "lendoraApplication"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const application =
+        JSON.parse(saved);
+
+
+    application.status =
+        "APPROVED";
+
+
+    /*
+    The dashboard will calculate the
+    simulated 2% registration fee
+    from the actual requested amount.
+    */
+
+    application.registrationFee =
+        Number(application.amount) * 0.02;
+
+
+    localStorage.setItem(
+        "Cash loan Application",
+        JSON.stringify(application)
+    );
+
+
+    loadAdmin();
+
+
+    alert(
+        "application approved successfully."
+    );
 
 }
+
+
+/* MONEY */
+
+function formatMoney(amount,currency){
+
+    try{
+
+        return new Intl.NumberFormat(
+            undefined,
+            {
+                style:"currency",
+                currency:currency,
+                maximumFractionDigits:2
+            }
+        ).format(amount);
+
+    }catch(error){
+
+        return currency + " " +
+        Number(amount).toLocaleString();
+
+    }
+
+}
+
+
+/* SECURITY FOR DISPLAY */
+
+function escapeHTML(value){
+
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* LOGOUT */
+
+function logout(){
+
+    sessionStorage.removeItem(
+        "AdminLoggedIn"
+    );
+
+    location.reload();
+
+}
+
+
+/* RESTORE ADMIN SESSION */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        if(
+            sessionStorage.getItem(
+                "AdminLoggedIn"
+            ) === "true"
+        ){
+
+            document.getElementById(
+                "loginScreen"
+            ).style.display = "none";
+
+            document.getElementById(
+                "adminPanel"
+            ).style.display = "block";
+
+            loadAdmin();
+
+        }
+
+    }
+);
 
 </script>
 
 </body>
 </html>
+ 
